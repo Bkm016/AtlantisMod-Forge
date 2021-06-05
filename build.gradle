@@ -14,8 +14,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 version = '1.0'
-group = 'com.github.ustc-zzzz'
-archivesBaseName = 'FluidBypassRenderDemo'
+group = 'ink.ptms'
+archivesBaseName = 'AtlantisMod'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
@@ -28,9 +28,9 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            arg "-mixin.config=mixins.fluidbypassrenderdemo.config.json"
+            arg "-mixin.config=mixins.atlantis_mod.config.json"
             mods {
-                fluidbypassrenderdemo {
+                atlantis_mod {
                     source sourceSets.main
                 }
             }
@@ -39,9 +39,9 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            arg "-mixin.config=mixins.fluidbypassrenderdemo.config.json"
+            arg "-mixin.config=mixins.atlantis_mod.config.json"
             mods {
-                fluidbypassrenderdemo {
+                atlantis_mod {
                     source sourceSets.main
                 }
             }
@@ -59,16 +59,16 @@ mixin {
 }
 
 jar {
-    rename 'main.refmap.json', 'mixins.fluidbypassrenderdemo.refmap.json'
+    rename 'main.refmap.json', 'mixins.atlantis_mod.refmap.json'
     manifest {
         attributes([
-            "MixinConnector": "com.github.ustc-zzzz.fluidbypassrenderdemo.FluidBypassRenderDemoConn",
-            "Specification-Title": "fluidbypassrenderdemo",
-            "Specification-Vendor": "fluidbypassrenderdemosareus",
+            "MixinConnector": "ink.ptms.atlantis.AtlantisModConn",
+            "Specification-Title": "atlantis_mod",
+            "Specification-Vendor": "atlantis_modsareus",
             "Specification-Version": "1",
             "Implementation-Title": project.name,
             "Implementation-Version": "${project.version}",
-            "Implementation-Vendor" :"fluidbypassrenderdemosareus",
+            "Implementation-Vendor" :"atlantis_modsareus",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

@@ -1,4 +1,4 @@
-package com.github.ustc_zzzz.fluidbypassrenderdemo.mixin;
+package ink.ptms.atlantis.mixin;
 
 import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
@@ -10,9 +10,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FluidState.class)
 public abstract class FluidStateMixin {
+
     @Inject(method = "shouldRenderBackwardUpFace", at = @At("HEAD"), cancellable = true)
     private void onShouldRenderBackwardUpFace(IBlockReader r, BlockPos p, CallbackInfoReturnable<Boolean> c) {
-        if (p.getY() >= r.getMaxBuildHeight()) {
+        if (p.getY() >= 127) {
             c.setReturnValue(false);
         }
     }

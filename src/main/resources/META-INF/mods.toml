@@ -5,9 +5,9 @@ license="All rights reserved"
 [[mods]]
 authors="ustc-zzzz"
 version="${file.jarVersion}"
-modId="fluidbypassrenderdemo"
-displayName="Fluid bypass render demo"
-description="Fluid bypass render demo"
+modId="atlantis_mod"
+displayName="Atlantis Mod"
+description="Atlantis Mod"
 
 [[dependencies.fluidbypassrenderdemo]]
 modId="forge"
